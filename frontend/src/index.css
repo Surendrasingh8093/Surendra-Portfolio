@@ -1,0 +1,39 @@
+/*Home page*/
+
+.hero h2{
+  color:#94a3b8;
+  margin:20px 0;
+}
+
+.buttons{
+  margin-top:20px;
+  padding: 45px;
+}
+
+button{
+  padding:15px 25px;
+  border:none;
+  border-radius:15px;
+  background:#38bdf8;
+  color:white;
+  cursor:pointer;
+  margin:10px;
+  transition:.3s;
+}
+
+button:hover{
+  transform:translateY(-4px);
+}
+
+.outline{
+  background:transparent;
+  border:2px solid #38bdf8;
+} 
+
+.topline{
+  color: black;
+  background-color: bisque;
+}
+
+
+

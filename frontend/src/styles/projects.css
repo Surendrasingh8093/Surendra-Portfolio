@@ -1,0 +1,197 @@
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px;
+}
+
+.project-card{
+  background:#1e293b;
+  padding:25px;
+  border-radius:15px;
+  transition:.3s;
+}
+
+.project-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 20px rgba(56,189,248,.4);
+}
+
+.project-card h3{
+  color:#38bdf8;
+}
+
+.project-card a{
+  display:inline-block;
+  margin-top:15px;
+  color: aqua;
+  cursor: pointer;
+} 
+
+
+/* =========================
+   LARGE LAPTOP
+========================= */
+
+@media (max-width: 1100px) {
+
+  #projects {
+    padding: 70px 6%;
+  }
+
+  .projects {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 22px;
+  }
+
+  .topline h2 {
+    font-size: 38px;
+  }
+
+  .project-card {
+    padding: 25px;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+  #projects {
+    padding: 60px 30px;
+  }
+
+  .topline {
+    margin-bottom: 40px;
+  }
+
+  .topline h2 {
+    font-size: 35px;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    gap: 20px;
+  }
+
+  .project-card {
+    padding: 25px;
+  }
+
+  .project-card h3 {
+    font-size: 22px;
+  }
+
+  .project-card p {
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  #projects {
+    padding: 50px 20px;
+  }
+
+  .topline {
+    margin-bottom: 35px;
+  }
+
+  .topline h2 {
+    font-size: 32px;
+  }
+
+  .topline h2::after {
+    width: 50px;
+    height: 3px;
+  }
+
+  .projects {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .project-card {
+    padding: 22px;
+
+    border-radius: 12px;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .project-card h3 {
+    font-size: 20px;
+
+    margin-bottom: 12px;
+  }
+
+  .project-card p {
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+  .project-card p:nth-of-type(2) {
+    font-size: 13px;
+  }
+
+  .project-card a {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    padding: 11px 15px;
+
+    margin-top: 15px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+  #projects {
+    padding: 40px 15px;
+  }
+
+  .topline h2 {
+    font-size: 28px;
+  }
+
+  .project-card {
+    padding: 18px;
+  }
+
+  .project-card h3 {
+    font-size: 19px;
+  }
+
+  .project-card p {
+    font-size: 13px;
+  }
+
+  .project-card a {
+    font-size: 13px;
+  }
+}
