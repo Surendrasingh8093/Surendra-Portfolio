@@ -1,9 +1,7 @@
-import {
-  useEffect,
-  useState,
-} from "react";
 
-import axios from "axios";
+import {useEffect, useState} from "react";
+
+import api from "../services/api";
 
 function Documents() {
 
@@ -24,10 +22,7 @@ function Documents() {
 
       try {
 
-        const response =
-          await axios.get(
-            "http://localhost:5000/api/documents"
-          );
+        const response =await api.get("/documents");
 
         setDocuments(
           response.data.documents || []
@@ -59,9 +54,7 @@ function Documents() {
     try {
 
      const response =
-      await axios.delete(
-        `http://localhost:5000/api/documents/${id}`
-      );
+      await api.delete(`/documents/${id}`);
 
      console.log(response.data);
 

@@ -16,7 +16,7 @@ app.use(cors(
   {
     origin: [
       "http://localhost:5173",
-      "https://YOUR-FRONTEND.vercel.app",
+      "https://surendra-portfolio-tau.vercel.app",
     ],
     credentials: true,
   }

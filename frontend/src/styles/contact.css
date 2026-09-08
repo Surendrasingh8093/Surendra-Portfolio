@@ -9,7 +9,7 @@ textarea{
 .contact-section {
   width: 100%;
   padding: 100px 20px;
-  background: #f8fafc;
+  background: #0f172a;
 }
 
 .contact-container {
@@ -38,7 +38,7 @@ textarea{
   font-size: 17px;
   line-height: 1.7;
   margin-bottom: 35px;
-  color: white;
+  color: whitesmoke;
 }
 
 
@@ -101,7 +101,7 @@ textarea{
 }
 
 .social-buttons a {
-  padding: 10px 20px;
+  padding: 15px 20px;
 
   border-radius: 8px;
 
@@ -190,7 +190,8 @@ textarea{
 .send-button {
   width: 100%;
 
-  padding: 13px;
+  padding: 15px;
+  margin-left: -1px;
 
   border: none;
 

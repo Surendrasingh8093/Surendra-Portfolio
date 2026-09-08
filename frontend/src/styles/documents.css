@@ -229,5 +229,6 @@ height:250px;
   .upload-document button {
     font-size: 15px;
     padding: 13px;
+    margin-left: 2px;
   }
 }

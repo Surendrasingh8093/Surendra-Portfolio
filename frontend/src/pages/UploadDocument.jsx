@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import api from "../services/api";
 
 function UploadDocument() {
 
@@ -65,8 +65,7 @@ function UploadDocument() {
       );
 
       const response =
-        await axios.post(
-          "http://localhost:5000/api/documents/upload",
+        await api.post("/documents/upload",
           formData
         );
 

@@ -46,7 +46,7 @@
   }
 
   .topline h2 {
-    font-size: 38px;
+    font-size: 30px;
   }
 
   .project-card {
@@ -65,11 +65,11 @@
   }
 
   .topline {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 
   .topline h2 {
-    font-size: 35px;
+    font-size: 30px;
   }
 
   .projects {
@@ -102,7 +102,7 @@
 @media (max-width: 600px) {
 
   #projects {
-    padding: 50px 20px;
+    padding: 60px 20px;
   }
 
   .topline {
@@ -172,26 +172,26 @@
 @media (max-width: 400px) {
 
   #projects {
-    padding: 40px 15px;
+    padding: 65px 18px;
   }
 
   .topline h2 {
-    font-size: 28px;
+    font-size: 30px;
   }
 
   .project-card {
-    padding: 18px;
+    padding: 20px;
   }
 
   .project-card h3 {
-    font-size: 19px;
+    font-size: 17px;
   }
 
   .project-card p {
-    font-size: 13px;
+    font-size: 17px;
   }
 
   .project-card a {
-    font-size: 13px;
+    font-size: 17px;
   }
 }
