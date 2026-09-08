@@ -13,10 +13,11 @@
     box-shadow:0 4px 15px rgba(0,0,0,.2);
 }
 
-.logo h2{
-    color:hsl(258, 93%, 60%);
+.logo h1{
+    color: skyblue;
     font-size:25px;
-    font-weight:800;
+    box-shadow: rgba(108, 92, 231, 0.8);
+    font-weight:800px;
     padding-block-start: 0px;
     
 }

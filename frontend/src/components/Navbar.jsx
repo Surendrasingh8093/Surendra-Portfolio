@@ -9,7 +9,7 @@ function Navbar() {
     <nav className="navbar">
 
       <div className="logo">
-        <h2>Surendra Singh</h2>
+        <h1><b>SS</b></h1>
       </div>
 
       <div
