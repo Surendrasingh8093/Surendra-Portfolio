@@ -1,10 +1,8 @@
 node_modules/
 .env
-
+.env.local
 backend/uploads/
 frontend/node_modules/
 
 dist/
-build/
 
-*.log
