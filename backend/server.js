@@ -16,7 +16,7 @@ app.use(cors(
   {
     origin: [
       "http://localhost:5173",
-      "https://surendra-portfolio-mu.vercel.app",
+      "https://surendra-portfolio-i0ak.onrender.com",
     ],
     credentials: true,
   }
