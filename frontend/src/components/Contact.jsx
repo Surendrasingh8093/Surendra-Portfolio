@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import axios from "axios";
+import api from "../services/api";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -14,9 +14,9 @@ function Contact() {
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
 
-  const API_URL =
-    import.meta.env.VITE_API_URL ||
-    "https://surendra-portfolio-i0ak.onrender.com/api";
+  // const API_URL =
+  //   import.meta.env.VITE_API_URL ||
+  //   "https://surendra-portfolio-i0ak.onrender.com";
 
   const handleChange = (e) => {
     setFormData({
@@ -33,8 +33,7 @@ function Contact() {
     setError("");
 
     try {
-      const response = await axios.post(
-        `${API_URL}/contact`,
+      const response = await api.post(`/contact`,
         formData
       );
 

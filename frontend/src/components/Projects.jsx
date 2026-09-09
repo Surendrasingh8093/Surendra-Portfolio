@@ -2,49 +2,110 @@ import { useEffect, useState } from "react";
 import api from "../services/api";
 
 function Projects() {
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-const [projects,setProjects]=useState([]);
+  useEffect(() => {
+    fetchProjects();
+  }, []);
 
-useEffect(()=>{
+  const fetchProjects = async () => {
+    try {
+      setLoading(true);
 
-api.get("/projects")
-.then(res=>setProjects(res.data))
-.catch(console.log);
+      const response = await api.get("/projects");
 
-},[]);
+      console.log("Projects API:", response.data);
 
-return(
+      // If backend returns an array
+      setProjects(response.data);
 
-<section id="projects">
+      setError("");
+    } catch (error) {
+      console.error("Projects Error:", error);
 
-<div className="topline">
-    <h2>Projects</h2>
-</div>
+      setError(
+        error.response?.data?.message ||
+          "Failed to load projects"
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
 
-<div className="projects">
+  if (loading) {
+    return (
+      <section id="projects">
+        <h2>Loading projects...</h2>
+      </section>
+    );
+  }
 
-{projects.map(project=>(
+  if (error) {
+    return (
+      <section id="projects">
+        <h2>Projects</h2>
+        <p>{error}</p>
 
-<div className="project-card" key={project._id}>
+        <button onClick={fetchProjects}>
+          Try Again
+        </button>
+      </section>
+    );
+  }
 
-<h3>{project.title}</h3>
+  return (
+    <section id="projects">
 
-<p>{project.description}</p>
+      <div className="topline">
+        <h2>Projects</h2>
+      </div>
 
-<p>{project.technologies.join(", ")}</p>
+      {projects.length === 0 ? (
+        <p>No projects available.</p>
+      ) : (
+        <div className="projects">
 
-<a href="https://github.com/Surendrasingh8093?tab=repositories">GitHub</a>
+          {projects.map((project) => (
+            <div
+              className="project-card"
+              key={project._id}
+            >
 
-</div>
+              <h3>
+                {project.title}
+              </h3>
 
-))}
+              <p>
+                {project.description}
+              </p>
 
-</div>
+              <p>
+                <strong>Technologies:</strong>{" "}
+                {Array.isArray(project.technologies)
+                  ? project.technologies.join(", ")
+                  : project.technologies}
+              </p>
 
-</section>
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              )}
 
-);
+            </div>
+          ))}
 
+        </div>
+      )}
+
+    </section>
+  );
 }
 
 export default Projects;
