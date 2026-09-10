@@ -1,164 +1,311 @@
-@media (max-width:1200px){
-
-.hero h1{
-font-size:52px;
-}
-
-.hero h2{
-font-size:28px;
-}
-
-.hero-image img{
-width:360px;
-height:360px;
-}
-
-}
-
-/* ===============================
-   Tablet (992px)
+/* ================================
+   TABLET / MOBILE
 ================================ */
 
-@media (max-width:992px){
+@media (max-width: 768px) {
 
-.hero-content{
-flex-direction:column-reverse;
-text-align:center;
-gap:40px;
+  /* ---------- BODY ---------- */
+
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /* ---------- NAVBAR ---------- */
+
+  .navbar {
+    width: 100%;
+    min-height: 60px;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+  .navbar-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+    padding: 4px 2px;
+  }
+
+
+  /* ---------- HERO ---------- */
+
+  .hero {
+    min-height: calc(100vh - 60px);
+    padding: 50px 20px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+
+  .hero h1 span {
+    display: block;
+  }
+
+  .hero h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .hero p {
+    font-size: 13px;
+    line-height: 1.6;
+    padding: 0 15px;
+    margin-bottom: 25px;
+  }
+
+
+  /* ---------- PROFILE IMAGE ---------- */
+
+  .profile-image {
+    width: 170px;
+    height: 170px;
+    margin: 20px auto 30px;
+  }
+
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+
+  /* ---------- BUTTONS ---------- */
+
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .hero-buttons a,
+  .hero-buttons button {
+    font-size: 12px;
+    padding: 10px 18px;
+    min-width: 110px;
+  }
+
+
+  /* ---------- SOCIAL LINKS ---------- */
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
+  }
+
+  .social-links a {
+    font-size: 12px;
+  }
+
+
+  /* ---------- PROJECTS ---------- */
+
+  .projects {
+    width: 100%;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+
+  /* ---------- SKILLS ---------- */
+
+  .skills-container {
+    padding: 20px 15px;
+  }
+
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+
+  /* ---------- CONTACT ---------- */
+
+  .contact-container {
+    width: 100%;
+    padding: 20px 15px;
+    box-sizing: border-box;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+
+  /* ---------- DOCUMENTS ---------- */
+
+  .documents-container {
+    width: 100%;
+    padding: 20px 15px;
+    box-sizing: border-box;
+  }
+
+  .documents-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .document-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .document-card iframe {
+    width: 100%;
+    height: 400px;
+  }
+
+  .document-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
 }
 
-.hero p{
-margin:auto;
-}
 
-.buttons{
-justify-content:center;
-}
-
-.social-links div{
-justify-content:center;
-}
-
-.hero-image img{
-width:320px;
-height:320px;
-}
-
-}
-
-/* ===============================
-   Mobile (768px)
+/* ================================
+   SMALL MOBILE PHONE
+   480px and below
 ================================ */
 
-@media (max-width:768px){
+@media (max-width: 480px) {
 
-.hero{
-padding-top:120px;
-}
+  /* NAVBAR */
 
-.hero h1{
-font-size:42px;
-}
+  .navbar {
+    min-height: 55px;
+    padding: 0 10px;
+  }
 
-.hero h2{
-font-size:24px;
-}
+  .logo {
+    font-size: 18px;
+  }
 
-.hero p{
-font-size:16px;
-}
+  .nav-links {
+    gap: 4px;
+  }
 
-.hero-image img{
-width:260px;
-height:260px;
-}
+  .nav-links a {
+    font-size: 8px;
+  }
 
-.buttons{
-flex-direction:column;
-align-items:center;
-}
 
-.buttons button{
-width:230px;
-}
+  /* HERO */
 
-.social-links div{
-gap:18px;
-}
+  .hero {
+    padding: 40px 15px 25px;
+  }
 
-}
+  .hero h1 {
+    font-size: 28px;
+  }
 
-/* ===============================
-   Small Mobile (576px)
-================================ */
+  .hero h2 {
+    font-size: 20px;
+  }
 
-@media (max-width:576px){
+  .hero p {
+    font-size: 11px;
+    padding: 0 5px;
+  }
 
-.hero h1{
-font-size:34px;
-}
 
-.hero h2{
-font-size:20px;
-}
+  /* IMAGE */
 
-.hero p{
-font-size:15px;
-line-height:1.7;
-}
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    margin: 15px auto 25px;
+  }
 
-.hero-image img{
-width:220px;
-height:220px;
-}
 
-.buttons button{
-width:100%;
-max-width:260px;
-}
+  /* BUTTONS */
 
-.social-links div{
-flex-direction:column;
-align-items:center;
-gap:15px;
-}
+  .hero-buttons {
+    gap: 10px;
+  }
 
-}
+  .hero-buttons a,
+  .hero-buttons button {
+    font-size: 10px;
+    padding: 9px 14px;
+    min-width: 100px;
+  }
 
-/* ===============================
-   Extra Small Devices (360px)
-================================ */
 
-@media (max-width:360px){
+  /* SOCIAL */
 
-.hero{
-padding:100px 15px 40px;
-}
+  .social-links {
+    gap: 15px;
+    margin-top: 20px;
+  }
 
-.hero h1{
-font-size:28px;
-}
+  .social-links a {
+    font-size: 10px;
+  }
 
-.hero h2{
-font-size:18px;
-}
 
-.hero p{
-font-size:14px;
-}
+  /* SKILLS */
 
-.hero-image img{
-width:180px;
-height:180px;
-}
+  .skills {
+    grid-template-columns: 1fr 1fr;
+  }
 
-.buttons button{
-font-size:14px;
-padding:12px;
-}
 
-.social-links a{
-font-size:15px;
-}
+  /* PDF */
+
+  .document-card iframe {
+    height: 350px;
+  }
 
 }

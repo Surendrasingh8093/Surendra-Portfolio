@@ -1,152 +1,325 @@
-.navbar{
-    width:100%;
-    height:62px;
-    background:#111827;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 5%; 
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:1000;
-    box-shadow:0 4px 15px rgba(0,0,0,.2);
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  width: 100%;
+  height: 65px;
+  background: #0b1224;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
 }
 
-.logo h1{
-    color: skyblue;
-    font-size:28px;
-    box-shadow: rgba(108, 92, 231, 0.8);
-    font-weight:800px;
-    padding-block-start: 0px;
-    
+
+.navbar-container {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  padding: 0 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:30px;
+
+/* =========================================
+   LOGO
+========================================= */
+
+.navbar-logo {
+  text-decoration: none;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  color: #38bdf8;
+
+  letter-spacing: 1px;
+
+  transition: 0.3s;
 }
 
-.nav-links a{
-    color:white;
-    text-decoration:none;
-    font-size:18px;
-    transition:.3s;
-    position:relative;
+.navbar-logo:hover {
+  color: #38bdf8;
 }
 
-.nav-links a:hover{
-    color:#38bdf8;
+
+/* =========================================
+   DESKTOP NAVIGATION
+========================================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.nav-links a::after{
-    content:"";
-    position:absolute;
-    width:0;
-    height:2px;
-    background:#38bdf8;
-    left:0;
-    bottom:-6px;
-    transition:.3s;
+.nav-links a {
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  position: relative;
+
+  transition: color 0.3s ease;
 }
 
-.nav-links a:hover::after{
-    width:100%;
+.nav-links a:hover {
+  color: #38bdf8;
 }
 
-/* ===========================
-   Menu Icon
-=========================== */
 
-.menu-icon{
-    display:none;
-    font-size:34px;
-    color:white;
-    cursor:pointer;
+/* Underline effect */
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 2px;
+
+  background: #38bdf8;
+
+  transition: width 0.3s ease;
 }
 
-/* ===========================
-   Laptop
-=========================== */
-
-@media(max-width:992px){
-
-.navbar{
-padding:0 5%;
+.nav-links a:hover::after {
+  width: 100%;
 }
 
-.nav-links{
-gap:10px;
+
+/* =========================================
+   HAMBURGER
+========================================= */
+
+.hamburger {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 8px;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 5px;
 }
 
+.hamburger span {
+  display: block;
+
+  width: 25px;
+  height: 3px;
+
+  background: #ffffff;
+
+  border-radius: 5px;
+
+  transition: all 0.3s ease;
 }
 
-/* ===========================
-   Tablet
-=========================== */
 
-@media(max-width:768px){
+/* =========================================
+   HAMBURGER ACTIVE
+========================================= */
 
-.menu-icon{
-display:block;
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
 }
 
-.nav-links{
-
-position:absolute;
-top:55px;
-left:100%;
-width:100%;
-background:#111827;
-
-display:flex;
-flex-direction:column;
-
-padding:5px 0;
-
-transition:.4s;
-
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
 }
 
-.nav-links.active{
-
-left:0;
-
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
-.nav-links a{
 
-padding:15px 0;
+/* =========================================
+   TABLET
+========================================= */
 
-font-size:20px;
+@media (max-width: 900px) {
 
+  .navbar-container {
+    padding: 0 20px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
 }
 
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    height: 60px;
+  }
+
+
+  .navbar-container {
+    padding: 0 18px;
+
+    position: relative;
+  }
+
+
+  /* Show hamburger */
+
+  .hamburger {
+    display: flex;
+  }
+
+
+  /* Hide desktop menu */
+
+  .nav-links {
+    position: absolute;
+
+    top: 60px;
+    left: 0;
+
+    width: 100%;
+
+    background: #0b1224;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
+    padding: 10px 0 15px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+
+    /* Hidden */
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s ease;
+  }
+
+
+  /* Open menu */
+
+  .nav-links.open {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+  }
+
+
+  /* Mobile links */
+
+  .nav-links a {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 25px;
+
+    font-size: 15px;
+
+    text-align: left;
+
+    color: #ffffff;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+
+  .nav-links a:hover {
+    background: rgba(56, 189, 248, 0.08);
+
+    color: #38bdf8;
+
+    padding-left: 32px;
+  }
+
+
+  /* Remove underline on mobile */
+
+  .nav-links a::after {
+    display: none;
+  }
 }
 
-/* ===========================
-   Mobile
-=========================== */
 
-@media(max-width:480px){
+/* =========================================
+   SMALL MOBILE
+========================================= */
 
-.logo h2{
+@media (max-width: 480px) {
 
-font-size:22px;
+  .navbar {
+    height: 58px;
+  }
 
-}
+  .navbar-container {
+    padding: 0 15px;
+  }
 
-.menu-icon{
+  .navbar-logo {
+    font-size: 20px;
+  }
 
-font-size:30px;
+  .hamburger {
+    width: 40px;
+    height: 40px;
+  }
 
-}
+  .nav-links {
+    top: 58px;
+  }
 
-.navbar{
+  .nav-links a {
+    font-size: 14px;
 
-padding:0 20px;
-
-}
-
+    padding: 13px 20px;
+  }
 }

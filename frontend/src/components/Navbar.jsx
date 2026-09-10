@@ -5,57 +5,73 @@ import { Link } from "react-router-dom";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
+      <div className="navbar-container">
 
-      <div className="logo">
-        <h1><b>SS</b></h1>
+        {/* Logo */}
+        <Link to="/" className="navbar-logo" onClick={closeMenu}>
+          <b>SS</b>
+        </Link>
+
+        {/* Hamburger Button */}
+        <button
+          className={`hamburger ${menuOpen ? "active" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        {/* Navigation Links */}
+        <div className={`nav-links ${menuOpen ? "open" : ""}`}>
+
+          <Link to="/" onClick={closeMenu}>
+            Home
+          </Link>
+
+          <Link to="/about" onClick={closeMenu}>
+            About
+          </Link>
+
+          <Link to="/skills" onClick={closeMenu}>
+            Skills
+          </Link>
+
+          <Link to="/projects" onClick={closeMenu}>
+            Projects
+          </Link>
+
+          <Link to="/resume" onClick={closeMenu}>
+            Resume
+          </Link>
+
+          <Link to="/contact" onClick={closeMenu}>
+            Contact
+          </Link>
+
+          <Link to="/profile" onClick={closeMenu}>
+            Profile
+          </Link>
+
+          <Link to="/documents" onClick={closeMenu}>
+            Documents
+          </Link>
+
+          <Link to="/upload-document" onClick={closeMenu}>
+            Upload PDF
+          </Link>
+
+        </div>
+
       </div>
-
-      <div
-        className="menu-icon"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        ☰
-      </div>
-
-      <div className={menuOpen ? "nav-links active" : "nav-links"}>
-        <Link to="/" onClick={() => setMenuOpen(false)}>
-         Home</Link>
-
-        <Link to="/about" onClick={() => setMenuOpen(false)}>
-          About
-        </Link>
-
-        <Link to="/skills" onClick={() => setMenuOpen(false)}>
-          Skills
-        </Link>
-
-        <Link to="/projects" onClick={() => setMenuOpen(false)}>
-          Projects
-        </Link>
-
-        <Link to="/resume" onClick={() => setMenuOpen(false)}>
-          Resume
-        </Link>
-
-        <Link to="/contact" onClick={() => setMenuOpen(false)}>
-          Contact
-        </Link>
-
-        <Link to="/profile" onClick={() => setMenuOpen(false)}>
-         Profile</Link>
-
-        <Link to="/documents" onClick={() => setMenuOpen(false)}>
-          Documents
-        </Link>
-
-        <Link to="/upload-document" onClick={() => setMenuOpen(false)}>
-         Upload PDF
-        </Link>
-        
-      </div>
-
     </nav>
   );
 }
