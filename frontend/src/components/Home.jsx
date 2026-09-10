@@ -1,4 +1,4 @@
- import profile from "../assets/profile.png"; // Add your profile image
+ import profile from "../assets/profile.png"; 
 
 
 function Home() {
@@ -21,7 +21,7 @@ function Home() {
 
         </div>
 
-        <div className="hero-image">
+        <div className="profile-image">
           <img src={profile} alt="Surendra Singh" />
       
         </div>
