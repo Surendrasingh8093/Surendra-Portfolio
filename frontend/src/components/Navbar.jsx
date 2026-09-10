@@ -2,76 +2,78 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 
+
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
-
   return (
     <nav className="navbar">
+
       <div className="navbar-container">
 
         {/* Logo */}
-        <Link to="/" className="navbar-logo" onClick={closeMenu}>
-          <b>SS</b>
+        <Link
+          to="/"
+          className="navbar-logo"
+          onClick={() => setMenuOpen(false)}
+        >
+          SS
         </Link>
 
-        {/* Hamburger Button */}
+        {/* Hamburger */}
         <button
-          className={`hamburger ${menuOpen ? "active" : ""}`}
+          className="hamburger"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation menu"
-          aria-expanded={menuOpen}
+          aria-label="Open menu"
         >
           <span></span>
           <span></span>
           <span></span>
         </button>
 
-        {/* Navigation Links */}
+        {/* Menu */}
         <div className={`nav-links ${menuOpen ? "open" : ""}`}>
 
-          <Link to="/" onClick={closeMenu}>
+          <Link to="/" onClick={() => setMenuOpen(false)}>
             Home
           </Link>
 
-          <Link to="/about" onClick={closeMenu}>
+          <Link to="/about" onClick={() => setMenuOpen(false)}>
             About
           </Link>
 
-          <Link to="/skills" onClick={closeMenu}>
+          <Link to="/skills" onClick={() => setMenuOpen(false)}>
             Skills
           </Link>
 
-          <Link to="/projects" onClick={closeMenu}>
+          <Link to="/projects" onClick={() => setMenuOpen(false)}>
             Projects
           </Link>
 
-          <Link to="/resume" onClick={closeMenu}>
+          <Link to="/resume" onClick={() => setMenuOpen(false)}>
             Resume
           </Link>
 
-          <Link to="/contact" onClick={closeMenu}>
+          <Link to="/contact" onClick={() => setMenuOpen(false)}>
             Contact
           </Link>
 
-          <Link to="/profile" onClick={closeMenu}>
+          <Link to="/profile" onClick={() => setMenuOpen(false)}>
             Profile
           </Link>
 
-          <Link to="/documents" onClick={closeMenu}>
+          <Link to="/documents" onClick={() => setMenuOpen(false)}>
             Documents
           </Link>
 
-          <Link to="/upload-document" onClick={closeMenu}>
+          <Link to="/upload-document" onClick={() => setMenuOpen(false)}>
             Upload PDF
           </Link>
 
         </div>
 
       </div>
+
     </nav>
   );
 }

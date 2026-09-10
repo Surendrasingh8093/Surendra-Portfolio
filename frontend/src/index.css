@@ -1,5 +1,17 @@
 /*Home page*/
 
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .hero h2{
   color:#94a3b8;
   margin:20px 0;
